@@ -1,0 +1,43 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>task2</title>
+</head>
+
+<body>
+	<input type="text" id="word" onblur='showResult()' />
+	<input type="text" id="res" onblur='showResult()' />
+
+	<!-- <button onclick="showResult()">Check</button> -->
+
+	<script type="text/javascript">
+
+		function showResult(){
+			let word = document.getElementById("word").value;
+
+			if (isPalindrome(word)) {
+				document.getElementById("res").value = "Its a palindrome";
+				// alert("Its a palindrome");
+			}
+			else {
+				document.getElementById("res").value = "Its NOT a palindrome";
+				// alert("Its NOT a palindrome");
+			}
+		}
+
+
+		function isPalindrome(word){
+			result = true;
+            for (let i = 0; i < word.length / 2; ++i) {
+                if (word[i] !== word[word.length - 1 - i]) {
+                    result = false;
+                    break;        
+                }
+            }
+            return result;
+
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>task3</title>
+</head>
+
+<body>
+	<input type="text" id="text" onblur='showHistogram()' />
+	<!-- <h3 id="output"></h3> -->
+
+	<script type="text/javascript">
+		// document.getElementById("output").innerText = "hello";
+
+		function showHistogram(){
+			var numbers = document.getElementById("text").value.trim().split(' ');
+			var num = 0;
+
+			for(var i = 0; i < numbers.length; i++){
+				num = numbers[i];
+				// document.getElementById("output").innerText = numbers[i];
+				// console.log(numbers[i]);
+				row = String(numbers[i]);
+				for(var j = 0;  j < num; j++){
+					// console.log('*');
+					row = row + '*'
+				}
+
+				console.log(row);
+				// document.getElementById("output").innerText = row;
+				document.writeln(row);
+				document.write("<br>");
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>wish list task</title>
+    </head>
+    <body>
+        <div id="myDIV" class="header">
+            <h2>My wish List</h2>
+            <input type="text" id="myInput" placeholder="Write item">
+            <button onclick="newElement() ">Add</button>
+        </div>
+
+        <ul id="myList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Bread</li>
+        <li>Humous</li>
+        </ul>
+
+        <script>
+            //Create a delete button after each list item
+            var myNodeList = document.getElementsByTagName("li");
+            for(var i = 0; i < myNodeList.length; i++){
+                var span = document.createElement("button");
+                var txt = document.createTextNode(" DELETE");
+                span.className = "dlt";
+                span.appendChild(txt);
+                myNodeList[i].appendChild(span);
+            }
+
+            // Click on delete button
+            var close = document.getElementsByClassName("dlt");
+            for(var i = 0; i < close.length; i++){
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display="none";
+                }
+            }
+
+            //Add item
+            function newElement() {
+                var li = document.createElement("li");
+                var inputValue = document.getElementById("myInput").value;
+                var item = document.createTextNode(inputValue);
+                li.appendChild(item);
+                if (inputValue === '') {
+                    alert("You must write something!");
+                } else {
+                    document.getElementById("myList").appendChild(li);
+                }
+                document.getElementById("myInput").value = "";
+
+                var span = document.createElement("button");
+                var txt = document.createTextNode(" DELETE");
+                span.className = "dlt";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                for(var i = 0; i < close.length; i++){
+                    close[i].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display="none";
+                    }
+                }
+
+            }
+        </script>
+    </body>
+</html>

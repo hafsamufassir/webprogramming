@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 10</title>
+    </head>
+    <body>
+        <div id="lines"></div>
+        <script>
+            function randomNumber(number){
+                return Math.floor(Math.random() * (number+1));
+            }
+
+            function bgChange(e){
+                const rndColor = 'rgb(' + randomNumber(255) + ',' + randomNumber(255) + ',' + randomNumber(255) + ')';
+                e.target.style.backgroundColor = rndColor;
+            }
+            
+            for(var i = 0; i < 10; i++){
+                const line = document.createElement('div');
+                line.style.backgroundColor = 'green';
+                line.style.height = '100px';
+                document.getElementById("lines").appendChild(line);
+
+                line.addEventListener('click', bgChange);
+
+            }
+
+            
+        </script>
+    </body>
+</html>

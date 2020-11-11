@@ -1,0 +1,37 @@
+/*body {
+	background-color: pink; 
+
+}*/
+
+p {
+
+  font-family: "Lucida Console", Courier, monospace;
+
+	margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+
+/*  	background-image: url("https://stickersquid.co/wp-content/uploads/2017/06/worldwide-connection-background-ipad-wacom-abstract-images-cool-white-background.jpg");
+  	background-size: 5000px 600px;  
+  	background-position: bottom;*/
+
+}
+
+.aboutme{
+
+	background-image: url("https://stickersquid.co/wp-content/uploads/2017/06/worldwide-connection-background-ipad-wacom-abstract-images-cool-white-background.jpg");
+  background-size: 5000px 600px;  
+  background-position: bottom;
+
+}
+
+#contacts  {
+	color: white;
+}
+
+hr{
+  border-color: white;
+}
+
+

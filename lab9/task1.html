@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1 </title>
+        <style>
+
+.container{display: inline-grid; grid-column-gap: 2px; grid-row-gap: 2px; background-color: yellow; margin: 50px;}
+
+.grid-item {background-color: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.8); padding: 10px; font-size: 20px; text-align: center; margin: 7px;}
+
+#header{background-color: yellow; border: 1px solid yellow;	grid-row-start:1; grid-row-end: 2; grid-column-start: 1; grid-column-end: 7; font-size: 50px; font-family: Sofia;}
+
+#item14 {grid-row: span 2; grid-column: span 2; font-size: 40px; padding-top: 30px;}
+        </style>
+    </head>
+    <body>
+            <div class="calendar">
+
+                    <div class="container">
+                        <div class="grid-item" id="header">February</div>
+                        <div class="grid-item">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                        <div class="grid-item">4</div>
+                        <div class="grid-item">5</div>
+                        <div class="grid-item">6</div>
+                        <div class="grid-item">7</div>
+                        <div class="grid-item">8</div>
+                        <div class="grid-item">9</div>
+                        <div class="grid-item">10</div>
+                        <div class="grid-item">11</div>
+                        <div class="grid-item">12</div>
+                        <div class="grid-item">13</div>
+                        <div class="grid-item" id="item14">14</div>
+                        <div class="grid-item">15</div>
+                        <div class="grid-item">16</div>
+                        <div class="grid-item">17</div>
+                        <div class="grid-item">18</div>
+                        <div class="grid-item">19</div>
+                        <div class="grid-item">20</div>
+                        <div class="grid-item">21</div>
+                        <div class="grid-item">22</div>
+                        <div class="grid-item" id="item23">23</div>
+                        <div class="grid-item">24</div>
+                        <div class="grid-item">25</div>
+                        <div class="grid-item">26</div>
+                        <div class="grid-item">27</div>
+                        <div class="grid-item">28</div>
+                    </div>
+                </div>
+
+
+        <script>
+            // document.title = "Calendar";
+            var button = document.createElement("button");
+            button.innerHTML = "Change title";
+            document.body.appendChild(button);
+
+            button.onclick = function() {
+                document.title = "Calendar";
+                }
+
+            var button1 = document.createElement("button");
+            button1.innerHTML = "Change bg color";
+            document.body.appendChild(button1);
+
+            button1.onclick = function() {
+                alert("changing background");
+                document.body.style.backgroundColor = "#f0de9c";
+                }
+
+            var button2 = document.createElement("button");
+            button2.innerHTML = "Change width";
+            document.body.appendChild(button2);
+
+            button2.onclick = function() {
+                document.getElementById("header").style.width = "500px";
+            }
+
+            var button3 = document.createElement("button");
+            button3.innerHTML = "Change header color";
+            document.body.appendChild(button3);
+
+            button3.onclick = function() {
+                document.getElementById("header").style.color = "#eb5934";
+                }
+            
+        </script>
+    </body>
+</html>

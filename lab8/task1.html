@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Task 1 </title>
+
+</head>
+
+<body>
+    <form action="" method="POST">
+        Number 1: <input type="text" id="a" onblur='calculate()' value="0" size="5" />  <br>
+        Operator: <input type="text" id="op" onblur='calculate()' size="5" />  <br>
+        Number 2: <input type="text" id="b" onblur='calculate()' value="0" size="5" />  <br>
+        
+        Result: <input type="text" id='res' value='' size="50" disabled/> <br>
+    </form>
+
+    <script type="text/javascript">
+
+        function doSum() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            var result =  a + b;
+
+            document.getElementById("res").value = result;
+        }
+
+        function doSubstraction() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            var result =  a - b;
+
+            document.getElementById("res").value = result;
+        }
+
+        function doProduct() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            var result =  a * b;
+
+            document.getElementById("res").value = result;
+        }
+
+        function doDivision() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            var result =  a / b;
+
+            document.getElementById("res").value = result;
+        }
+
+        function calculate(){
+            var operator = document.getElementById("op").value;
+
+            switch (operator){
+                case "+":
+                    doSum();
+                    break;
+                case "-":
+                    doSubstraction();
+                    break;
+                case "*":
+                    doProduct();
+                    break;
+                case "/":
+                    doDivision();
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

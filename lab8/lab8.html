@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Lab 8 </title>
+
+</head>
+
+<body>
+
+	<form id="form1" action="lab8.php" method="post">
+		a: <input id="number1" type="number" name = "num"> <br>
+		b: <input id="number2" type="number" name = "num"> <br>
+		operation: <input id="oper" type="text" name = "num"> <br>
+		<input type="submit">
+
+	</form>
+
+	<script>
+
+		function calculator(){
+			var a = document.getElementByid("number1").submit();
+			var b = document.getElementByid("number2").submit();
+			var operation = document.getElementByid("oper").submit();
+
+			switch operation{
+				case '+':
+					document.write(a+b);
+
+				default:
+					break;
+			}
+
+
+		}
+
+	</script>
+
+
+
+
+</body>
+
+</html>

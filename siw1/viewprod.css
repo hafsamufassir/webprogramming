@@ -1,0 +1,16 @@
+body {
+	/*background-color: RGB(52, 161, 235);*/
+	background-color: #4272b8;
+}
+
+.content{
+	font-size: 20px;
+	/*background-image: url("bg.jpg");*/
+	background-color: #ffe4cf;
+	width: 70%;
+	margin-top: 0px;
+/*	margin: 100px;*/
+	padding: 40px;
+	color: #4272b8;
+}
+

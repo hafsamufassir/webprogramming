@@ -1,0 +1,42 @@
+
+.container{
+	display: inline-grid;
+
+	grid-column-gap: 2px;
+	grid-row-gap: 2px;
+	background-color: yellow;
+	margin: 50px;
+
+}
+
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin: 7px;
+
+}
+
+#header{
+	background-color: yellow;
+	border: 1px solid yellow;
+	grid-row-start:1;
+  	grid-row-end: 2;
+  	grid-column-start: 1;
+  	grid-column-end: 7;
+  	font-size: 50px;
+  	font-family: Sofia;
+
+}
+
+
+#item14 {
+  grid-row: span 2;
+  grid-column: span 2;
+  font-size: 40px;
+  padding-top: 30px;
+}
+

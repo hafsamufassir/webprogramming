@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+<titl> lab7, task1 </title>
+</head>
+
+<body>
+
+<?php
+
+$x = 0;
+$function = 0;
+
+if (x > -2 && x < 5){
+	$function = 5 * pow(x, 2) + 6;
+	echo "f(x) = $function <br/>" 
+} elseif (x >= 5) {
+	$function = pow(x, 3) + 7;
+	echo "f(x) = $function  <br/>"
+}
+
+?>
+
+</body>
+
+</html>

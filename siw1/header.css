@@ -1,0 +1,20 @@
+header {
+	display: flex;
+	font-family: 'Sansita Swashed', cursive;
+	font-size: 45px;
+	color:#ffe4cf;
+}
+
+
+.links{
+	position: relative;
+	text-align: center;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 115px;
+	margin-bottom: 0px;
+}
+
+a:visited{
+	color: #ffe4cf;
+}
