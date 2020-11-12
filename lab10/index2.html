@@ -3,8 +3,7 @@
     <head>
         <title>Lab 10</title>
     </head>
-    <body>
-        <div id="lines"></div>
+    <body id="lines" style="background-color: green;">
         <script>
             function randomNumber(number){
                 return Math.floor(Math.random() * (number+1));
@@ -17,7 +16,6 @@
             
             for(var i = 0; i < 10; i++){
                 const line = document.createElement('div');
-                line.style.backgroundColor = 'green';
                 line.style.height = '100px';
                 document.getElementById("lines").appendChild(line);
 
