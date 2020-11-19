@@ -79,24 +79,6 @@
 
             var prices=[];
 
-            function calculate(){
-                var summary;
-                var total = 0;
-                var input, label;
-                for (var i = 0; i <  5; i++){
-                    
-                    input = "input" + i;
-                    label = "label" + i;
-                    var inputnumb = document.getElementById(input).value;
-                    if(inputnumb != ""){
-                        summary = prices[i] * inputnumb;
-                        total += summary;
-                        document.getElementById(label).innerHTML = summary;
-                    }
-                }
-                document.getElementById("totalres").innerHTML="Summary : " + total;
-            }
-
             function makeOrder(xml){
                 var i;
                 var xmlDoc = xml.responseXML;
@@ -113,6 +95,25 @@
                         "</td></tr>";
                 }
                 document.getElementById("updmenu").innerHTML = table;
+            }
+
+
+            function calculate(){
+                var summary;
+                var total = 0;
+                var input, label;
+                for (var i = 0; i <  5; i++){
+                    
+                    input = "input" + i;
+                    label = "label" + i;
+                    var inputnumb = document.getElementById(input).value;
+                    if(inputnumb != ""){
+                        summary = prices[i] * inputnumb;
+                        total += summary;
+                        document.getElementById(label).innerHTML = summary;
+                    }
+                }
+                document.getElementById("totalres").innerHTML="Summary : " + total;
             }
 
 
