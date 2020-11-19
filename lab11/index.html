@@ -29,6 +29,7 @@
         <!-- <button onclick="makeOrder()">Make an order</button> -->
 
         <table id="updmenu"></table>
+        <label id="totalres"></label>
 
         <script>
             function loadMenu(){
@@ -46,7 +47,7 @@
                 document.body.appendChild(button);
 
                 button.onclick = function() {
-                    makeOrder
+                    loadOrderMenu();
                 }
             }
             function myFunction(xml){
@@ -58,16 +59,63 @@
                     table += "<tr><td>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
                         "</td><td>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue +
                         "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
-                            "</td><td>" + x[i].getElementsByTagName("calories")[0].childNodes[0].nodeValue +
+                        "</td><td>" + x[i].getElementsByTagName("calories")[0].childNodes[0].nodeValue +
                         "</td></tr>";
                 }
                 document.getElementById("menu").innerHTML = table;
 
             }
 
-            function makeOrder(){
-                
+            function loadOrderMenu(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if (this.readyState ==  4 && this.status == 200){
+                        makeOrder(this);
+                    }
+                };
+                xhttp.open("GET", "simple.xml", true);
+                xhttp.send();
             }
+
+            var prices=[];
+
+            function calculate(){
+                var summary;
+                var total = 0;
+                var input, label;
+                for (var i = 0; i <  5; i++){
+                    
+                    input = "input" + i;
+                    label = "label" + i;
+                    var inputnumb = document.getElementById(input).value;
+                    if(inputnumb != ""){
+                        summary = prices[i] * inputnumb;
+                        total += summary;
+                        document.getElementById(label).innerHTML = summary;
+                    }
+                }
+                document.getElementById("totalres").innerHTML="Summary : " + total;
+            }
+
+            function makeOrder(xml){
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table="<tr><th>name</th><th>price</th><th>description</th><th>calories</th><th>Count</th><th>Summary</th></tr>";
+                var x = xmlDoc.getElementsByTagName("food");
+                for (i = 0; i < x.length; i++){
+                    prices.push(x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue.substr(1));
+                    table += "<tr><td>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+                        "</td><td>" + x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue +
+                        "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
+                        "</td><td>" + x[i].getElementsByTagName("calories")[0].childNodes[0].nodeValue +
+                        "</td><td> <input value=0 onchange=calculate() id='input" + i + "'>" + 
+                        "</td><td> <label id='label" + i + "'></label></td>" + 
+                        "</td></tr>";
+                }
+                document.getElementById("updmenu").innerHTML = table;
+            }
+
+
         </script>
     </body>
 </html>
