@@ -32,6 +32,7 @@
         <label id="totalres"></label>
 
         <script>
+
             function loadMenu(){
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function(){
@@ -84,6 +85,7 @@
                 var xmlDoc = xml.responseXML;
                 var table="<tr><th>name</th><th>price</th><th>description</th><th>calories</th><th>Count</th><th>Summary</th></tr>";
                 var x = xmlDoc.getElementsByTagName("food");
+                
                 for (i = 0; i < x.length; i++){
                     prices.push(x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue.substr(1));
                     table += "<tr><td>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
@@ -91,19 +93,23 @@
                         "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
                         "</td><td>" + x[i].getElementsByTagName("calories")[0].childNodes[0].nodeValue +
                         "</td><td> <input value=0 onchange=calculate() id='input" + i + "'>" + 
-                        "</td><td> <label id='label" + i + "'></label></td>" + 
+                        "</td><td> <label id='label" + i + "'> </label></td>" + 
                         "</td></tr>";
                 }
+                table += "<tr><td>" + "<label> Summary: " + total + "</label>" + "</td></tr>";
+
+                
+                
                 document.getElementById("updmenu").innerHTML = table;
             }
 
+            var total = 0;
 
             function calculate(){
                 var summary;
-                var total = 0;
+               
                 var input, label;
                 for (var i = 0; i <  5; i++){
-                    
                     input = "input" + i;
                     label = "label" + i;
                     var inputnumb = document.getElementById(input).value;
