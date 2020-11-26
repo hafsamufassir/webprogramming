@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> lab 12  menu json</title>
+    </head>
+
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td{
+            padding: 5px;
+        }
+    </style>
+
+    <body>
+        <h2>Food menu</h2>
+        <button id="menubtn">Show the Menu</button>
+
+        <br>
+        <br>
+
+        <table id="menu"></table>
+
+        <br>
+
+        <!-- <button onclick="makeOrder()">Make an order</button> -->
+
+        <table id="updmenu"></table>
+        <label id="totalres"></label>
+
+        <script>
+            const btn = document.getElementById("menubtn");
+            btn.addEventListener('click', loadMenu);
+
+            function loadMenu(){
+                // console.log("asdf");
+                var table;
+                // obj = {table: "breakfast_menu", limit: 20};
+                // dbParam = JSON.stringify(obj);
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if (this.readyState ==  4 && this.status == 200){
+                        myObj = JSON.parse(this.responseText);
+                        table = "<tr><th>name</th><th>price</th><th>description</th><th>calories</th></tr>";
+                        for (x in  myObj["breakfast_menu"]) {
+                            table += "<tr><td>" + myObj["breakfast_menu"][x].name +
+                                "</td><td>" +  myObj["breakfast_menu"][x].price +
+                                "</td><td>" +  myObj["breakfast_menu"][x].description +  
+                                "</td><td>" +  myObj["breakfast_menu"][x].calories + "</td></tr>";
+                            
+                        }
+                        table += "</table"
+                        document.getElementById("menu").innerHTML = table;
+                        // console.log('myObj:', myObj);
+                    }
+                }
+                xmlhttp.open("GET", "jsonSimple.json", true);
+                xmlhttp.send();
+
+                var button = document.createElement("button");
+                button.innerHTML = "Make an order";
+                document.body.appendChild(button);
+
+                button.onclick = function() {
+                    loadOrderMenu();
+                }
+            }
+            
+            var prices=[];
+
+            function loadOrderMenu(){
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if (this.readyState ==  4 && this.status == 200){
+                        myObj = JSON.parse(this.responseText);
+                        var table="<tr><th>name</th><th>price</th><th>description</th><th>calories</th><th>Count</th><th>Summary</th></tr>";
+                        for (x in  myObj["breakfast_menu"]) {
+                            prices.push(myObj["breakfast_menu"][x].price.substr(1));
+                            table += "<tr><td>" + myObj["breakfast_menu"][x].name +
+                                "</td><td>" +  myObj["breakfast_menu"][x].price +
+                                "</td><td>" +  myObj["breakfast_menu"][x].description +  
+                                "</td><td>" +  myObj["breakfast_menu"][x].calories + 
+                                "</td><td> <input value=0 onchange=calculate() id='input" + x + "'>" +
+                                "</td><td> <label id='label" + x + "'> </label></td>" +
+                                "</td></tr>"; 
+                            
+                        }
+                        // table += "<tr><td>" + "<label> Summary: " + total + "</label>" + "</td></tr>";
+                        table += "</table"
+                        document.getElementById("updmenu").innerHTML = table;
+                    }
+                }
+                xmlhttp.open("GET", "jsonSimple.json", true);
+                xmlhttp.send();
+            }
+
+            var total = 0;
+
+            function calculate(){
+                var summary;
+               
+                var input, label;
+                for (var i = 0; i <  5; i++){
+                    input = "input" + i;
+                    label = "label" + i;
+                    var inputnumb = document.getElementById(input).value;
+                    if(inputnumb != ""){
+                        summary = prices[i] * inputnumb;
+                        total += summary;
+                        document.getElementById(label).innerHTML = summary;
+                    }
+                }
+                document.getElementById("totalres").innerHTML="Summary : " + total;
+            }
+        </script>
+    </body>
+</html>
