@@ -1,0 +1,11 @@
+body {
+	background-color: #4272b8;
+}
+
+.content{
+	background-color: #ffe4cf;
+	width: 70%;
+	margin-top: 0px;
+	padding: 40px;
+	color: #4272b8;
+}

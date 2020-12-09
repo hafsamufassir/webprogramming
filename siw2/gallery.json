@@ -1,0 +1,54 @@
+{
+    "gallery":[
+        {
+            "name":"Tray with Resin art", 
+            "pic":"assets/json/1.jpg", 
+            "description":"Resin art made on tray. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Butterfly in resin", 
+            "pic":"assets/json/2.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Resin art", 
+            "pic":"assets/json/3.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Wooden tray made in resin style", 
+            "pic":"assets/json/4.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Resin art drawnn on paper", 
+            "pic":"assets/json/5.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Resin art", 
+            "pic":"assets/json/6.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Butterfly", 
+            "pic":"assets/json/7.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Tree made in resin art technique", 
+            "pic":"assets/json/8.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"3 floor tray made from resin", 
+            "pic":"assets/json/9.jpg", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        },
+        {
+            "name":"Ocean resin art", 
+            "pic":"assets/json/10.png", 
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos unde vel at totam quod itaque neque necessitatibus eligendi ducimus, nihil autem animi facere eveniet minus pariatur et. Commodi, corrupti."
+        }
+    ]
+}

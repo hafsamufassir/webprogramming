@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery</title>
+        <link rel="stylesheet" href="gallery.css?v=?php echo time(); ?>">
+    </head>
+
+    <body>
+        <h2 id="heading">Gallery</h2>
+        <button id="gallerybtn">See pictures!</button>
+        <div class="container">
+            <div id="objects">
+                <div id="gallerypic"></div>
+            </div>
+        </div>
+        
+        <script>
+            const btn = document.getElementById("gallerybtn");
+            btn.addEventListener('click', showGallery);
+
+            function showGallery(){
+                var pictures = document.getElementById("gallerypic");              
+
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if (this.readyState ==  4 && this.status == 200){
+                        myObj = JSON.parse(this.responseText);
+
+                        for (x in  myObj["gallery"]) {
+                            const lineBreak = document.createElement('br');
+                            var name = document.createElement("h1");
+                            name.className = "picName";
+                            name.innerText =  myObj["gallery"][x].name;
+
+                            pictures.append(name);
+
+                            var picture = document.createElement("img");
+                            picture.className = "pic";
+                            picture.src = myObj["gallery"][x].pic;
+
+                            pictures.append(picture);
+
+                            var descript = document.createElement("p");
+                            descript.className = "descript";
+                            descript.innerHTML = myObj["gallery"][x].description; 
+
+                            pictures.append(descript);
+                            
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                            pictures.appendChild(lineBreak);
+                        }
+                    }
+                }
+
+                xmlhttp.open("GET", "gallery.json", true);
+                xmlhttp.send();
+            }
+
+            // function loadGallery(){
+            //     var pictures;
+            //     xmlhttp = new XMLHttpRequest();
+            //     xmlhttp.onreadystatechange = function(){
+            //         if (this.readyState ==  4 && this.status == 200){
+            //             myObj = JSON.parse(this.responseText);
+            //             pictures = "";
+            //             for (x in  myObj["gallery"]) {
+            //                 pictures +=  "<img src=" + myObj["gallery"][x].pic + ">" + "<br>" + 
+            //                 "<div class='name'>" + myObj["gallery"][x].name + "</div><br>" + 
+            //                     myObj["gallery"][x].description + "<br>"; 
+                            
+            //             }
+            //             document.getElementById("gallerypic").innerHTML = pictures;
+            //             // console.log('myObj:', myObj);
+            //         }
+            //     }
+
+            //     xmlhttp.open("GET", "gallery.json", true);
+            //     xmlhttp.send();
+            // }
+
+        
+        </script>
+    </body>
+</html>

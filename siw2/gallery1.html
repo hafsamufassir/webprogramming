@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery</title>
+        <link rel="stylesheet" href="gallery.css?v=?php echo time(); ?>">
+    </head>
+
+    <style>
+        .block{
+            color: red;
+        }
+    </style>
+
+    <body>
+        <h2 id="heading">Gallery</h2>
+        <button id="gallerybtn">See pictures!</button>
+        <div id="gallerypic"> </div>
+        <script>
+            const btn = document.getElementById("gallerybtn");
+            btn.addEventListener('click', loadGallery);
+
+            function loadGallery(){
+                var pictures = document.getElementById("gallerypic");
+                
+
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if (this.readyState ==  4 && this.status == 200){
+                        myObj = JSON.parse(this.responseText);
+                        // pictures = "";
+                        for (x in  myObj["gallery"]) {
+                            var block = document.createElement("div");
+                            block.className = "block";
+                            block.innerText =  myObj["gallery"][x].name;
+
+                            pictures.append(block);
+                            // pictures += myObj["gallery"][x].name +
+                            //     // "<img src=" + myObj["gallery"][x].pic + ">" + 
+                            //      myObj["gallery"][x].description; 
+                            
+                            
+                        }
+                        // document.getElementById("gallerypic").innerHTML = pictures;
+                        // console.log('myObj:', myObj);
+                    }
+                }
+
+                xmlhttp.open("GET", "gallery.json", true);
+                xmlhttp.send();
+            }
+
+        
+        </script>
+    </body>
+</html>
