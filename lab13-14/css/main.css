@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+
+body {
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #80002b;
+
+    margin-top: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #80002b;
+}
+
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+a {
+    color:  #80002b;
+}
+
+a:hover, a:focus{
+    color: white;
+    text-decoration: none;
+    outline: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-inverse {
+    background: #80002b;
+    border-color:  #80002b;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #dd4869;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+#headerwrap {
+    background: url(../img/bg.jpg) center top;
+    margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 500px;
+    width: 100%;
+
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+}
+
+#headerwrap h1{
+    margin-top: 100px;
+    color: white;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+#headerwrap h2{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.w {
+    padding-top: 35px;
+}
+
+.w h4 {
+    font-size: 25px;
+}
+
+#dg {
+    background: #ffaac7;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+#dg h4 {
+    font-size: 40px; 
+}
+
+.tilt {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .tilt:hover {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  .wb {
+      padding-top:  35px;
+  }
+
+  .wb h4 {
+      font-size: 35px;
+  }
+
+  #lg {
+      background:#ffaac7;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      text-align: center;
+  }
+
+  #lg h4{
+      font-size: 45px;
+  }
+
+  #r {
+      background: white;
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+
+  #r h4{
+      color:  #80002b;
+      font-size: 45px;     
+  }
+
+  #r p{
+      color:  #80002b;
+  }
+
+  #f {
+      background:#cc6888;
+      padding-top: 30px;
+      padding-bottom: 20px;      
+  }
+
+  #f i {
+      color: #80002b;
+      font-size: 30px;
+      padding: 20px;
+  }
+
+  #f i:hover{
+      color: #ff7878;
+  }
